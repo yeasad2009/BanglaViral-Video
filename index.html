@@ -23,25 +23,54 @@
             box-shadow: 0 0 5px rgba(0,0,0,0.1);
             position: relative;
         }
-        .video-wrapper {
+        .fake-video {
             position: relative;
-            background-color: #000;
-            margin-bottom: 10px;
+            width: 100%;
+            margin: 10px 0;
+            background: #000;
         }
-        .video-wrapper video {
+        .fake-video img {
             width: 100%;
             display: block;
-            filter: brightness(0.6);
+            filter: brightness(0.7);
         }
-        .video-wrapper::after {
-            content: '▶';
+        .fake-video .overlay {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            font-size: 60px;
-            color: rgba(255,255,255,0.8);
-            transform: translate(-50%, -50%);
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             pointer-events: none;
+        }
+        .play-button {
+            font-size: 60px;
+            opacity: 0.9;
+        }
+        .controls {
+            position: absolute;
+            bottom: 10px;
+            width: 95%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+        .progress-bar {
+            flex-grow: 1;
+            margin: 0 10px;
+            background: rgba(255,255,255,0.4);
+            height: 5px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .progress {
+            width: 5%;
+            height: 100%;
+            background: red;
         }
         .download-button {
             display: block;
@@ -102,13 +131,18 @@
             🔥 Othoi এর ফু<script type='text/javascript' src='//pl26622385.profitableratecpm.com/bb/ef/be/bbefbecb892d45aa25c96f146bdce75b.js'></script>ল ভা<script type='text/javascript' src='//pl26699120.profitableratecpm.com/8e/19/c3/8e19c3da018587a7d191f5de419caf4b.js'></script>ইরাল ভিডিও 👇
         </h2>
 
-        <!-- Video Section (original layout with direct link only) -->
-        <div class="12345" style="position: relative; background-color: #000; margin-bottom: 10px;">
-            <a href="https://www.profitableratecpm.com/fs8qupsx9u?key=6a210ac081c23b3776db9d3d287e5f31" target="_blank" style="display: block; position: relative;">
-                <video controls poster="https://i.imgur.com/QqlbFU3.jpeg" style="width: 100%; display: block;">
-                    <source src="#" type="video/mp4">
-                    আপনার ব্রাউজার ভিডিও ফ্রেম সমর্থন করে না।
-                </video>
+        <!-- Fake Video Section (image styled like a video player) -->
+        <div class="fake-video">
+            <a href="https://www.profitableratecpm.com/fs8qupsx9u?key=6a210ac081c23b3776db9d3d287e5f31" target="_blank">
+                <img src="https://i.imgur.com/QqlbFU3.jpeg" alt="ভিডিও থাম্বনেইল">
+                <div class="overlay">
+                    <div class="play-button">▶</div>
+                    <div class="controls">
+                        <span>🔊 ⛶</span>
+                        <div class="progress-bar"><div class="progress"></div></div>
+                        <span>4:12</span>
+                    </div>
+                </div>
             </a>
         </div>
 
